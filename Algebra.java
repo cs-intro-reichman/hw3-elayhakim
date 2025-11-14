@@ -27,7 +27,7 @@ public class Algebra {
 	public static int plus(int x1, int x2) {
 		int x=x1;
 		if(x2<0){
-			for(int i=0; i<x2; i++){
+			for(int i=x2; i<0; i++){
 			x--;
 		}
 		return x;
@@ -43,7 +43,7 @@ public class Algebra {
 	public static int minus(int x1, int x2) {
 		int x = x1;
 		if(x2<0){
-			for(int i=0; i<x2; i++){
+			for(int i=x2; i<0; i++){
 			x++;
 		}
 		return x;
