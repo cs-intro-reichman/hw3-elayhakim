@@ -68,7 +68,9 @@ public class Anagram {
 		String newstr= "";
 		int length= str1.length();
 		while (newstr.length() < length) {
-			newstr += str1.charAt((int)(Math.random()*str1.length()));
+			int j=(int)(Math.random()*str1.length());
+			newstr += str1.charAt(j);
+			str1= str1.substring(0, j) + str4.substring(j+1);
 		}
 		return newstr;
 	}
