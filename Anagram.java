@@ -70,7 +70,7 @@ public class Anagram {
 		while (newstr.length() < length) {
 			int j=(int)(Math.random()*str1.length());
 			newstr += str1.charAt(j);
-			str1= str1.substring(0, j) + str4.substring(j+1);
+			str1= str1.substring(0, j) + str1.substring(j+1);
 		}
 		return newstr;
 	}
