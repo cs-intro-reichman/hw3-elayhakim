@@ -157,7 +157,12 @@ public class Algebra {
 			while (pow(i, 2) <x) {
 				i++;
 			}
-			return i;
+			if(pow(i, 2) == x){ 
+				return i;
+			}else{
+				return (i--);
+			}
+
 		}
 		return 0;
 		
