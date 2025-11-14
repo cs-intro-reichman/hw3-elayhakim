@@ -146,7 +146,7 @@ public class Algebra {
 	// Returns the integer part of sqrt(x) 
 	public static int sqrt(int x) {
 		if(x>0){
-			for(int i=0; i<x; i++){
+			for(int i=0; i<=x; i++){
 				if(times(i,i)==x){
 					return i;
 				}
