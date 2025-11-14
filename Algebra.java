@@ -102,6 +102,7 @@ public class Algebra {
 
 	// Returns the integer part of x1 / x2 
 	public static int div(int x1, int x2) {
+		int sighn = 1;
 		int x3=0;
 		int x4=0;
 		if(x1 == 0 || x2 ==0){
@@ -110,22 +111,30 @@ public class Algebra {
 		if(x1 > 0 && x2 > 0){
 			x3=x1;
 			x4=x2;
+			sighn = 1;
 		}else if (x1 < 0 && x2 < 0) {
 			x3 = minus(0,x1);
 			x4 = minus(0,x2);
+			sighn =1;
 		}else if (x1 < 0) {
 			x3 = minus(0,x1);
 			x4= x2;
+			sighn = -1;
 		}else{
 			x3= x1;
 			x4 = minus(0,x2);
+			sighn = -1;
 		}
 		int count = 0;
 		while(x3>=x4){
 			x4= plus(x4,x2);
 			count++;
 		}
-		return count;
+		if(sighn>0){
+			return count;
+		}else{
+			return (minus(0, count));
+		}
 	}
 
 	// Returns x1 % x2
