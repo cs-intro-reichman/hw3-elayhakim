@@ -102,10 +102,27 @@ public class Algebra {
 
 	// Returns the integer part of x1 / x2 
 	public static int div(int x1, int x2) {
-		int x=x2;
+		int x3=0;
+		int x4=0;
+		if(x1 == 0 || x2 ==0){
+			return 0;
+		}
+		if(x1 > 0 && x2 > 0){
+			x3=x1;
+			x4=x2;
+		}else if (x1 < 0 && x2 < 0) {
+			x3 = minus(0,x1);
+			x4 = minus(0,x2);
+		}else if (x1 < 0) {
+			x3 = minus(0,x1);
+			x4= x2;
+		}else{
+			x3= x1;
+			x4 = minus(0,x2);
+		}
 		int count = 0;
-		while(x1>=x){
-			x= plus(x,x2);
+		while(x3>=x4){
+			x4= plus(x4,x2);
 			count++;
 		}
 		return count;
@@ -118,9 +135,11 @@ public class Algebra {
 
 	// Returns the integer part of sqrt(x) 
 	public static int sqrt(int x) {
-		for(int i=0; i<x; i++){
-			if(times(i,i)==x){
-				return i;
+		if(x>0){
+			for(int i=0; i<x; i++){
+				if(times(i,i)==x){
+					return i;
+				}
 			}
 		}
 		return 0;
