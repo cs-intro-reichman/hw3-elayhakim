@@ -26,26 +26,54 @@ public class Algebra {
 	// Returns x1 + x2
 	public static int plus(int x1, int x2) {
 		int x=x1;
+		if(x2<0){
+			int a = minus(x1, minus(0,x2));
+			return a;
+		}else{
 		for(int i=0; i<x2; i++){
 			x++;
 		}
 		return x;
+		}
 	}
 
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
 		int x = x1;
+		if(x2<0){
+			int a = plus(x1, minus(0,x2));
+			return a;
+		}else{
 		for(int i=0; i<x2; i++){
 			x--;
 		}
 		return x;
+		}
 	}
 
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
+		if(x1 == 0 || x2 ==0){
+			return 0;
+		}
 		int x=0;
+		if(x1 > 0 && x2 > 0){
 		for(int i=0; i<x2; i++){
 			x= plus(x, x1);
+		}
+		return x;
+		}else if (x1 < 0 && x2 < 0) {
+			for(int i=0; i< minus(0,x2); i++){
+				x= plus(x, minus(0,x1));
+			}
+		}else if (x1 < 0) {
+			for(int i=0; i< x2; i++){
+				x= plus(x, minus(0,x1));
+			}
+		}else{
+			for(int i=0; i< minus(0,x2); i++){
+				x= plus(x, x1);
+			}
 		}
 		return x;
 	}
