@@ -160,7 +160,7 @@ public class Algebra {
 			if(pow(i, 2) == x){ 
 				return i;
 			}else{
-				return (i--);
+				return minus(i, 1);
 			}
 
 		}
