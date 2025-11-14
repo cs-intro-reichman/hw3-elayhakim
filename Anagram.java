@@ -55,7 +55,7 @@ public class Anagram {
 			if(str.charAt(i) >= 97 && str.charAt(i) <= 122 ){
 				newstr += str.charAt(i);
 			}else if(str.charAt(i) >= 65 && str.charAt(i) <= 90 ){
-				newstr += (str.charAt(i)+32);
+				newstr += (char)(str.charAt(i)+32);
 			}
 		}
 		return newstr;
