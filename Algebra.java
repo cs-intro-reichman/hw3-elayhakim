@@ -126,8 +126,9 @@ public class Algebra {
 			sighn = -1;
 		}
 		int count = 0;
+		int x10 = x4;
 		while(x3>=x4){
-			x4= plus(x4,x2);
+			x4= plus(x4,x10);
 			count++;
 		}
 		if(sighn>0){
